@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<!--
+	Road Trip by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>Av. ERCİYAS</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{% static 'aassets/css/main.css' %}" />
+</head>
+
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div class="logo"><a href="{% url 'anasayfa' %}">{{ basliklar.title }} <span>{{ basliklar.title2 }}</span></a></div>
+		<a href="#menu"><span>Menu</span></a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+            <li><a href="{% url 'anasayfa' %}">Anasayfa</a></li>
+            <li><a href="{% url 'detay' %}">{{ home1.title }}</a></li>
+            <li><a href="{% url 'detay2' %}">{{ home2.title }}</a></li>
+            <li><a href="{% url 'detay3' %}">{{ home3.title }}</a></li>
+			<li><a href="{% url 'detay4' %}">{{ home4.title }}</a></li>
+			<li><a href="{% url 'bülten' %}">BÜLTEN</a></li>
+        </ul>
+	</nav>
+
+	<!-- Content -->
+	<!--
+			Note: To show a background image, set the "data-bg" attribute below
+			to the full filename of your image. This is used in each section to set
+			the background image.
+		-->
+	<section id="post" class="wrapper bg-img" data-bg="bannerr4.jpg" >
+		<div class="inner">
+			<article class="box">
+				<header>
+					<h2><p>{{ home3.title }} </p></h2>
+					<hr/>
+				</header>
+				<div class="content">
+					<p>{{ home3.text|safe }}</p>
+				</div>
+				<hr/>
+			</article>
+		</div>
+	</section>
+
+	<footer id="footer">
+		<div class="inner"></div>
+			<div class="copyright">
+				&copy; alaolu</a>
+			</div>
+		</div>	
+	</footer>	
+
+
+
+	<!-- Scripts -->
+	<script src="{% static 'aassets/jss/jquery.min.js' %}"></script>
+	<script src="{% static 'aassets/jss/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'aassets/jss/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'aassets/jss/skel.min.js' %}"></script>
+	<script src="{% static 'aassets/jss/util.js' %}"></script>
+	<script src="{% static 'aassets/jss/main.js' %}"></script>
+
+</body>
+
+</html>

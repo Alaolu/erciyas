@@ -1,0 +1,158 @@
+{% extends 'index.html' %}
+
+
+{% block header %}
+<!-- Header -->
+<header id="header">
+    <div class="logo"><a href="{% url 'anasayfa' %}">{{ basliklar.title }} <span>{{ basliklar.title2 }}</span></a></div>
+    <a href="#menu"><span>Menu</span></a>
+</header>
+{% endblock %}
+
+
+{% block nav %}
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="{% url 'anasayfa' %}">Anasayfa</a></li>
+        <li><a href="{% url 'detay' %}">{{ home1.title }}</a></li>
+        <li><a href="{% url 'detay2' %}">{{ home2.title }}</a></li>
+        <li><a href="{% url 'detay3' %}">{{ home3.title }}</a></li>
+        <li><a href="{% url 'detay4' %}">{{ home4.title }}</a></li>
+        <li><a href="{% url 'bülten' %}">BÜLTEN</a></li>
+
+    </ul>
+</nav>
+{% endblock %}
+
+{% block banner %}
+<section id="banner" class="bg-img" data-bg="bannerr.jpg">
+    <div class="inner">
+        <header>
+            <h1>{{ basliklar.title3 }}</h1>
+        </header>
+    </div>
+    <a href="#one" class="more">Daha Fazlası..</a>
+</section>
+{% endblock %}
+
+{% block one %}
+<!-- One -->
+<section id="one" class="wrapper post bg-img" data-bg="bannerr2.jpg">
+    <div class="inner">
+        <article class="box">
+            <header>
+                <h2>{{ home1.title }}</h2>
+            </header>
+            <div class="content">
+                <p>{{ home1.content }}</p>
+            </div>
+            <footer>
+                <a href="{% url 'detay' %}" class="button alt">Daha Fazlası..</a>
+            </footer>
+        </article>
+    </div>
+    <a href="#two" class="more">Daha Fazlası..</a>
+</section>
+{% endblock %}
+
+{% block two %}
+<!-- Two -->
+<section id="two" class="wrapper post bg-img" data-bg="bannerr5.jpg">
+    <div class="inner">
+        <article class="box">
+            <header>
+                <h2>{{ home2.title }}</h2>
+            </header>
+            <div class="content">
+                <p>{{ home2.content }}</p>
+            </div>
+            <footer>
+                <a href="{% url 'detay2' %}" class="button alt">Daha Fazlası..</a>
+            </footer>
+        </article>
+    </div>
+    <a href="#three" class="more">Daha Fazlası..</a>
+</section>
+{% endblock %}
+
+{% block three %}
+<!-- Three -->
+<section id="three" class="wrapper post bg-img" data-bg="bannerr4.jpg">
+    <div class="inner">
+        <article class="box">
+            <header>
+                <h2>{{ home3.title }}</h2>
+            </header>
+            <div class="content">
+                <p>{{ home3.content }}</p>
+            </div>
+            <footer>
+                <a href="{% url 'detay3' %}" class="button alt">Daha Fazlası..</a>
+            </footer>
+        </article>
+    </div>
+    <a href="#four" class="more">Daha Fazlası..</a>
+</section>
+{% endblock %}
+
+{% block four %}
+<!-- Four -->
+<section id="four" class="wrapper post bg-img" data-bg="bannerr3.jpg">
+    <div class="inner">
+        <article class="box">
+            <header>
+                <h2>{{ home4.title }}</h2>
+            </header>
+            <div class="content">
+                <p>{{ home4.content }}</p>
+            </div>
+            <footer>
+                <a href="{% url 'detay4' %}" class="button alt">Daha Fazlası..</a>
+            </footer>
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+
+        <h2>{{ iletisim.title }}</h2>
+        <h6>{{ iletisim.text|safe }}</h6>
+
+        <form action="{% url 'anasayfa' %}" method="POST">
+            {% csrf_token %}
+
+            <div class="field half first">
+                <label for="name">İsim ve Soyisim</label>
+                {{ form.name }}
+            </div>
+            <div class="field half">
+                <label for="email">E-mail</label>
+                {{ form.email }}
+            </div>
+            <div class="field">
+                <label for="message">Mesaj</label>
+                {{ form.text }}
+            </div>
+            <ul class="actions">
+                <li><input value="Gönder" class="button alt" type="submit"></li>
+            </ul>
+        </form>
+
+        <ul class="icons">
+            <li><a href="{{ twitter.content }}" class="icon round fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="{{ facebook.content }}" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="{{ instagram.content }}" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+
+        <div class="copyright">
+            &copy; alaolu</a>
+        </div>
+
+    </div>
+</footer>
+{% endblock %}
